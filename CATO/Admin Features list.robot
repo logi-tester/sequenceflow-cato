@@ -1,4 +1,5 @@
 *** Settings ***
+Test Teardown     Close Browser
 Library           SeleniumLibrary
 
 *** Variables ***
@@ -33,7 +34,7 @@ Create user in admin page
     SeleniumLibrary.Input Text    xpath=.//*[@id='user_password']    ${pwd}
     SeleniumLibrary.Input Text    xpath=.//*[@id='cPassword']    ${pwd}
     SeleniumLibrary.Click Element    xpath=.//*[@id='user']/div[9]/div/div/div[2]/div/button[contains(text(),'Save')]
-    SeleniumLibrary.Close Browser    SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close Browser
 
 Check new user creation
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub   
@@ -44,7 +45,7 @@ Check new user creation
     SeleniumLibrary.Click Button    id=form_login
     Sleep    15s
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//img[@data-ng-click='goHome()']    20s
-    SeleniumLibrary.Close Browser    SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close Browser
 
 Delete created user
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
@@ -114,7 +115,8 @@ Edit Target Category
     SeleniumLibrary.Click Element    xpath=.//*[@id='renameProductid']
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/button    40s
     SeleniumLibrary.Click Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/button
-
+    SeleniumLibrary.Close Browser
+    
 Target customer category
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//div[@id='showhideproducts']/div/label[contains(.,'VPCV Passenger')]    30s
     Select From List By Label    id=renameListid    VPCV Passenger
@@ -140,7 +142,7 @@ Count Required
     SeleniumLibrary.Click ElementSeleniumLibrary.Click Element    xpath=.//*[@ng-click='minimalvalueupdate(minimalcount)']
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/button    30s
     SeleniumLibrary.Click ElementSeleniumLibrary.Click Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/
-	SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close Browser
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
     SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p    40s
