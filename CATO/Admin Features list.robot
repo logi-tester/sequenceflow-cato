@@ -15,7 +15,6 @@ ${count_val}      1000
 *** Test Cases ***
 Create user in admin page
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p
     SeleniumLibrary.Input Text    id=form_username    admins
     SeleniumLibrary.Input Text    id=form_password    admins@123
@@ -38,7 +37,6 @@ Create user in admin page
 
 Check new user creation
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub   
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p
     SeleniumLibrary.Input Text    id=form_username    ${username}
     SeleniumLibrary.Input Text    id=form_password    ${pwd}
@@ -49,7 +47,6 @@ Check new user creation
 
 Delete created user
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p
     SeleniumLibrary.Input Text    id=form_username    admins
     SeleniumLibrary.Input Text    id=form_password    admins@123
@@ -67,7 +64,6 @@ Delete created user
 
 Program Period selection
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p
     SeleniumLibrary.Input Text    id=form_username    admins
     SeleniumLibrary.Input Text    id=form_password    admins@123
@@ -99,7 +95,6 @@ Program Period selection
 
 Edit Target Category
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p
     SeleniumLibrary.Input Text    id=form_username    admins
     SeleniumLibrary.Input Text    id=form_password    admins@123
@@ -115,7 +110,6 @@ Edit Target Category
     SeleniumLibrary.Click Element    xpath=.//*[@id='renameProductid']
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/button    40s
     SeleniumLibrary.Click Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/button
-    SeleniumLibrary.Close Browser
     
 Target customer category
     SeleniumLibrary.Wait Until Page Contains Element    xpath=.//div[@id='showhideproducts']/div/label[contains(.,'VPCV Passenger')]    30s
@@ -144,7 +138,6 @@ Count Required
     SeleniumLibrary.Click ElementSeleniumLibrary.Click Element    xpath=.//*[@id='commonAlert']/div/div/div/div[2]/div/div/div/div/
     SeleniumLibrary.Close Browser
     SeleniumLibrary.Open Browser    ${url}    ${browser}    None    http://10.100.20.113:4444/wd/hub
-    SeleniumLibrary.Maximize Browser Window
     SeleniumLibrary.Wait Until Element Is Enabled    //div[@class='login-footertxt']/p    40s
     SeleniumLibrary.Input Text    id=form_username    testpurpose
     SeleniumLibrary.Input Text    id=form_password    testpurpose
